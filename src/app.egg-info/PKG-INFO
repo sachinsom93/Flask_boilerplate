@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: app
+Version: 0.1
+Summary: Boilerplate Flask API with Flask-SQLAlchemy, RESTx, pytest, flake8 tox configured
+Home-page: https://github.com/sachinsom93/flask-boilerplate
+Author: sachin som
+Author-email: sachinsom507@gmail.com
+Maintainer-email: sachinsom507@gmail.com
+License: MIT
+Project-URL: Source Code, https://github.com/sachinsom93/flask-boilerplate
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+
+UNKNOWN
+

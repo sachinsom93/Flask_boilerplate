@@ -1,0 +1,32 @@
+Todo list:
+1. User regigtration
+2. Existing user can obtain a JWT by providing thir email and password
+3. JWT contains the following claims:
+    {
+        "token_issue_at": DateTime,
+        "token_expires_at": DateTime,
+        "user_public_id": Integer,
+        "is_admin": Boolean
+    }
+4. JWT is sent in access_token field of HTTP response after successful authentication with email/password
+5. JWT must expires in 1 hour(for production)
+6. JWT is sent by client in autherization field of request header
+7. Requests must be rejected if JWT has been modified
+8. Requests must be rejected is JWT is expired
+9. if user is logged out their JWT is immediatly expired/invalid
+10. If JWT is expired, user must be re-authenticate with email/password to obtain a new JWT
+
+
+
+Part of JWT
+    - header
+    - payload
+        * time when token issued (iat)
+        * time when token expires (exp)
+        * user details(public_id) (sub)(registered_claims)
+        * is_admin  (admin)(private_claims)
+    - signature
+
+    encoded(header).endcoded(payload).encoded(signature)
+
+

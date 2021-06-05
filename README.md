@@ -1,5 +1,5 @@
 ### Flask Boiler Plate
-
+A simple easy to setup flask boilerplate that is build upon Factory pattern.
 ### Technology stack
 1. Flask
 2. Flask-SQLALchemy
@@ -19,7 +19,9 @@ git clone https://github.com/sachinsom93/Flask_boilerplate.git
 pip install -e .
 ```
  
-3. Run the flask server
+3. Rename .evnsample to .env
+
+4. Run the flask server
 ```sh
 flask run
 ```

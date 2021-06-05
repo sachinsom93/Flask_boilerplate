@@ -6,7 +6,7 @@
 3. Pytest
 4. Black
 5. Flake
-6. Tom
+6. Tox
 
 ### SetUp Commans
 1. Clone the repository

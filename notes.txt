@@ -30,3 +30,14 @@ Part of JWT
     encoded(header).endcoded(payload).encoded(signature)
 
 
+===========================================================
+Flask migration:
+    Flask -Migrate extension adds a new set of commands to
+    the Flask CLI grouped under flask db. In order to Migrate
+    to database, we need to run the command:
+        #To initialize migration
+            flask db init
+        # To mirgrate
+            flask db migrate --message <message>
+        # To execute the migration script
+            flask db upgrade

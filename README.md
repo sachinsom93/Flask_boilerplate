@@ -18,7 +18,7 @@ git clone https://github.com/sachinsom93/Flask_boilerplate.git
 ```sh
 pip install -e .
 ```
- 
+
 3. Rename .evnsample to .env
 
 4. Run the flask server

@@ -6,6 +6,7 @@ from flask import current_app, jsonify
 from flask_restx import abort
 from app import db
 from ...models.user import User
+from ...models.token_blacklist import BlacklistedToken
 from .decorators import token_required
 from ...utils.datetime_util import remaining_fromtimestamp, format_timedelta_digits
 
@@ -64,3 +65,14 @@ def get_logged_in_user():
     expires_at = get_logged_in_user.expires_at
     user.token_expires_in = format_timedelta_digits(remaining_fromtimestamp(expires_at))
     return user
+
+
+@token_required
+def process_logout_request():
+    access_token = process_logout_request.token
+    expires_at = process_logout_request.expires_at
+    blacklisted_token = BlacklistedToken(token=access_token, expires_at=expires_at)
+    db.session.add(blacklisted_token)
+    db.session.commit()
+    response_dict = dict(status="success", message="successfully logged out")
+    return response_dict, HTTPStatus.OK

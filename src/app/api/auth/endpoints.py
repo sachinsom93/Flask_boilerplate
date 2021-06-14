@@ -3,10 +3,15 @@ API endpoints definition for /auth
 """
 from http import HTTPStatus
 from flask_restx import Namespace, Resource
-from .dto import auth_reqparser
-from .bussiness import process_registration_request, process_login_request
+from .dto import auth_reqparser, user_model
+from .bussiness import (
+    process_registration_request,
+    process_login_request,
+    get_logged_in_user,
+)
 
 auth_ns = Namespace(name="auth", validate=True)
+auth_ns.models[user_model.name] = user_model
 
 
 @auth_ns.route("/register", endpoint="auth_register")
@@ -37,3 +42,19 @@ class LoginUser(Resource):
         email = request_data.get("email")
         password = request_data.get("password")
         return process_login_request(email=email, password=password)
+
+
+@auth_ns.route("/user", endpoint="auth_user")
+class GetUser(Resource):
+    """Handles HTTP requests."""
+
+    @auth_ns.doc(security="Bearer")  # To mark the HTTPMethod as protected resource
+    @auth_ns.response(int(HTTPStatus.OK), "Token is currectly valid.")
+    @auth_ns.response(int(HTTPStatus.BAD_REQUEST), "Validation error.")
+    @auth_ns.response(int(HTTPStatus.UNAUTHORIZED), "Token is invalid or expired.")
+    @auth_ns.marshal_with(
+        user_model
+    )  # To filter the return data according to provided user_model
+    def get(self):
+        "Validate access token and return user info."
+        return get_logged_in_user()

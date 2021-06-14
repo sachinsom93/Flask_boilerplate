@@ -7,7 +7,7 @@ from .auth.endpoints import auth_ns
 api_blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
 
 
-authorizations = {"Bearer": {"type": "apikey", "in": "header", "name": "Authorization"}}
+authorizations = {"Bearer": {"type": "apiKey", "in": "header", "name": "Authorization"}}
 
 api = Api(
     api_blueprint,

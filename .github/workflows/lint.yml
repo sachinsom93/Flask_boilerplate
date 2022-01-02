@@ -22,7 +22,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        python install flake8
+        pip install flake8
 
     - name: Analyse the Code with flake8
       run: flake8 --ignore=E501 .

@@ -1,3 +1,5 @@
+[![Flake8 Lint Check](https://github.com/sachinsom93/Flask_boilerplate/actions/workflows/lint.yml/badge.svg)](https://github.com/sachinsom93/Flask_boilerplate/actions/workflows/lint.yml)
+
 ### Flask Boiler Plate
 A simple easy to setup flask boilerplate that is build upon Factory pattern.
 ### Technology stack

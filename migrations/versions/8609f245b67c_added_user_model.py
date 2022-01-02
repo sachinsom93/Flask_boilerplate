@@ -1,7 +1,7 @@
 """Added User Model
 
 Revision ID: 8609f245b67c
-Revises: 
+Revises:
 Create Date: 2021-06-06 13:59:22.599137
 
 """

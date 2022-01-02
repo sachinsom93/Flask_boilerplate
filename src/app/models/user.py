@@ -2,7 +2,7 @@
 Class definition for User model.
 """
 
-from datetime import date, datetime, timezone, timedelta
+from datetime import datetime, timezone, timedelta
 from flask import current_app
 from sqlalchemy.ext.hybrid import hybrid_property
 

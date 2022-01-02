@@ -3,7 +3,6 @@ Config settings for for development, testing and production environments.
 """
 import os
 from pathlib import Path
-from typing import Tuple
 
 
 HERE = Path(__file__).parent

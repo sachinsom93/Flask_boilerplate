@@ -1,0 +1,8 @@
+# Github Workflow for Linting on Push and Push Request
+name: "Linting Workflow"
+on: [push, pull_request]
+jobs:
+  Linting:
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2

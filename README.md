@@ -13,17 +13,23 @@ A simple easy to setup flask boilerplate that is build upon Factory pattern.
 ### SetUp Commans
 1. Clone the repository
 ```sh
-git clone https://github.com/sachinsom93/Flask_boilerplate.git
+$ git clone https://github.com/sachinsom93/Flask_boilerplate.git
 ```
 
-2. Install the dependencies
+2. Create virtual Env
 ```sh
-pip install -e .
+$ virtualenv venv
+$ venv\Scripts\activate
 ```
 
-3. Rename .evnsample to .env
-
-4. Run the flask server
+3. Install the dependencies
 ```sh
-flask run
+(venv)$ pip install -e .
+```
+
+4. Rename .evnsample to .env
+
+5. Run the flask server
+```sh
+(venv)$ flask run
 ```
